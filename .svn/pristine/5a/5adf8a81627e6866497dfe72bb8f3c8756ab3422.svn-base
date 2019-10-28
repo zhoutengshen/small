@@ -1,0 +1,61 @@
+<template>
+  <div class="cart-wraper">
+    <TopBar />
+    <List :prods="prods" />
+  </div>
+</template>
+<script>
+import { BottomBar, List, TopBar } from "@/components/cart";
+export default {
+  components: {
+    BottomBar,
+    List,
+    TopBar
+  },
+  data() {
+    return {
+      prods: [
+        {
+          prodId: "245",
+          img: "http://img.yesm.cn/shopProduct/20180622/20180622183145_530.jpg",
+          prodName:
+            "Midea/美的电压力锅电饭锅PCS5011HM一锅双胆 智能12小时预约5升高压锅美的电饭煲",
+          selected: "默认",
+          price: 100,
+          count: 10
+        },
+        {
+          prodId: "1213qwe3",
+          img: "http://img.yesm.cn/shopProduct/20190418/20190418171451_979.jpg",
+          prodName: "免持式反向伞--蓝色",
+          selected: "默认",
+          price: 100,
+          count: 10
+        },
+        {
+          prodId: "123sfer",
+          img: "http://img.yesm.cn/shopProduct/20180926/20180926162638_667.jpg",
+          prodName: "变形金刚车载吸尘器TFLP-XC05",
+          selected: "默认",
+          price: 100,
+          count: 10
+        },
+        {
+          prodId: "1452",
+          img: "http://img.yesm.cn/shopProduct/20190221/20190221171249_820.jpg",
+          prodName: "爱丽新 KEKE 防水划痕修复布（1块，颜色随机）",
+          selected: "默认",
+          price: 100,
+          count: 10
+        }
+      ]
+    };
+  }
+};
+</script>
+<style lang="less" scoped>
+.cart-wraper {
+  padding: 1.6rem;
+  min-height: calc(100vh - 5rem);
+}
+</style>

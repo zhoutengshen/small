@@ -1,0 +1,59 @@
+<template>
+  <ul class="nav-list">
+    <li class="nav-item" v-for="navConfig in navConfigs" :key="navConfig.name">
+      <router-link :to="navConfig.path" active-class="active-nav" class="nav-link">
+        <i :class="[navConfig.icon,'nav-icon']"></i>
+        <span class="title">{{navConfig.title}}</span>
+      </router-link>
+    </li>
+  </ul>
+</template>
+<script>
+const navConfigs = [
+  {
+    title: "首页",
+    path: "/home",
+    name: "home",
+    icon: "iconfont icon-pocket"
+  },
+  {
+    title: "购物车",
+    path: "/cart",
+    name: "cart",
+    icon: "iconfont icon-car"
+  },
+  {
+    title: "订单",
+    path: "/orders",
+    name: "orders",
+    icon: "iconfont icon-order"
+  },
+  {
+    title: "我的",
+    path: "/account",
+    name: "account",
+    icon: "iconfont icon-account"
+  }
+];
+export default {
+  data() {
+    return {
+      navConfigs: [...navConfigs]
+    };
+  },
+  mounted() {}
+};
+</script>
+<style lang="less" scoped>
+@import "./style.less";
+</style>
+<style>
+.active-nav > .nav-icon {
+  background: tomato;
+  border-radius: 50%;
+  color: #fff;
+}
+.active-nav > .title {
+  color: red;
+}
+</style>

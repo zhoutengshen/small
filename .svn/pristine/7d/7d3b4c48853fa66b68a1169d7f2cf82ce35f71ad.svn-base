@@ -1,0 +1,21 @@
+import axios from "axios";
+
+const BASIC_URL = "/api"
+
+const instance = axios.create({
+    baseURL: BASIC_URL,
+    timeout: 1000,
+});
+
+instance.interceptors.request.use(config => {
+    //这里附带二外的请求报文，例如auth信息
+    //TODO:loading 开始动作
+    return config;
+}, error => Promise.reject(error));
+
+instance.interceptors.response.use(res => {
+    //处理resp信息
+    //TODO:loading 结束动作
+    return res;
+}, error => Promise.reject(error))
+export default instance;

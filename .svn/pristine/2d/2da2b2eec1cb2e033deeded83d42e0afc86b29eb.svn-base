@@ -1,0 +1,32 @@
+.nav-list {
+    box-sizing     : border-box;
+    display        : flex;
+    height         : 5rem;
+    flex-direction : row;
+    align-items    : center;
+    justify-content: space-around;
+    background     : @defaultBgColor;
+
+    li {
+        flex: 1;
+    }
+
+    .nav-link {
+        display        : flex;
+        flex-direction : column;
+        text-decoration: none;
+        align-items    : center;
+        color          : #666;
+
+        .nav-icon {
+            font-size    : 1.8rem;
+            margin-bottom: 0.2rem;
+            padding      : 0.4rem;
+        }
+
+        .title {
+            font-size: 1.3rem;
+
+        }
+    }
+}

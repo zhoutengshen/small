@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 禁止用户缩放 -->
+  <!--viewport-fit 设置 ios 11 以上机型 内容显示区域位于安全区域 -->
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,viewport-fit=contain"
+    name="viewport" />
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1462661_17oqhqbtbuf.css">
+  <title>customer-mall</title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but customer-mall doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<template>
+  <div class="list-wraper">
+    <div class="item-wraper" v-for="item in prods">
+      <CheckBox class="check-box" v-model="checkList" />
+      <img class="img" :src="item.img" />
+      <div class="info">
+        <p class="prodName">{{item.prodName}}</p>
+        <span class="selected">已选：{{item.selected}}</span>
+        <div class="price">
+          <span>￥{{item.price}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+import CheckBox from "@/base-ui/CheckBox";
+export default {
+  components: {
+    CheckBox
+  },
+  props: {
+    prods: {
+      type: Array,
+      required: true
+    }
+  },
+  data() {
+    return {
+      checkList: []
+    };
+  },
+  watch: {
+    checkList(val) {
+      console.log(val);
+    }
+  }
+};
+</script>
+<style lang="less" scoped>
+.list-wraper {
+  .item-wraper {
+    display: flex;
+    flex-direction: row;
+    background: @defaultBgColor;
+    border-radius: 0.5rem;
+    margin-top: 0.8rem;
+    padding: 0.8rem;
+    .check-box {
+      display: flex;
+      align-items: center;
+      margin-right: 0.4rem;
+    }
+    .img {
+      width: 8rem;
+      height: 8rem;
+      border: 1px solid #999;
+      border-radius: 0.5rem;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: 0.8rem;
+      .prodName {
+        line-height: 1.5;
+        font-size: 1.3rem;
+        max-height: 4rem;
+        overflow: hidden;
+        word-break: break-all;
+      }
+      .selected {
+        line-height: 1.5;
+        font-size: 1.2rem;
+        color: #999;
+      }
+      .price {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        color: #666;
+      }
+    }
+  }
+}
+</style>

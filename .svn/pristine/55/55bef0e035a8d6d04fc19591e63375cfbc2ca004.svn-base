@@ -1,0 +1,6 @@
+import BarTemp from "./Bar";
+import AddressTemp from "./Address";
+import InfoTemp from "./Info";
+export const Bar = BarTemp;
+export const Address = AddressTemp;
+export const Info = InfoTemp;

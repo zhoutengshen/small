@@ -1,0 +1,35 @@
+<template>
+  <div class="product-detail-wraper">
+    <div class="block-5rem" />
+    <ProductInfo :prod="prod" class="prod-info" />
+  </div>
+</template>
+<script>
+import prods from "./mock/prods.json";
+import ProductInfo from "@/components/ProductDetail/ProductInfo";
+export default {
+  components: {
+    ProductInfo
+  },
+  data() {
+    return {
+      prod: {}
+    };
+  },
+  mounted() {
+    const { id } = this.$route.params;
+    const prod = prods.find(item => item.productId == id);
+    this.prod = prod;
+  }
+};
+</script>
+<style lang="less" scoped>
+.product-detail-wraper {
+  .block-5rem {
+    height: 4rem;
+  }
+  .prod-info {
+    margin: 0.8rem 0;
+  }
+}
+</style>
